@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="catalog"></div>
+    
+    <script src="./js/student.js"></script>
+    <script>
+
+        const student = new Student(273, "Ionut", 17);
+        const studentNou = new Student(235, "George", 20);
+        const studentA = new Student(132,"Vasile", 23);
+        student.salut();
+        student.examen(7,8);
+        student.calMedia(5,8);
+
+        const catalog = document.getElementById("catalog");
+        // catalog.innerHTML = `
+        //     <p> ${student.salut()} </p>
+        //     <p> ${student.examen(6,9)} </p>
+        //     <p> ${student.calMedia(6,9)} </p>
+
+        //     <p> ${studentNou.salut()} </p>
+        //     <p> ${studentNou.examen(3,10)} </p>
+        //     <p> ${studentNou.calMedia(3,10)} </p>
+        // `
+        const studenti = []
+        let text = ""
+        studenti.push(student,studentNou,studentA)
+        studenti.forEach(function () {
+            let continut = `
+            <p> ${studenti.id} </p>
+            <p> ${studenti.id} </p>
+            <p> ${studenti.id} </p>
+            `
+        text += continut
+        });
+        catalog.innerHTML = text
+        console.log(studenti)
+
+    </script>
+</body>
+</html>
