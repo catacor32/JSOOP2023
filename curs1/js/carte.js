@@ -1,13 +1,26 @@
 
 class Carte{
-    constructor(autor,titlu,gen,nrPag,pret,stoc,copertaPiele){
+    mypret;
+    constructor(autor,titlu,gen,nrPag,stoc,copertaPiele){
         this.autor = String(autor);
-        this.carte = titlu;
+        this.titlu = titlu;
         this.gen = gen;
         this.nrPag = Number(nrPag);
-        this.pret = Number(pret);
+
         this.stoc = Number(stoc);
         this.copertaPiele = Boolean(copertaPiele)
+    }
+    get pret(){
+        console.log("Sunt in Getter");
+        return this.mypret;
+    }
+    set pret(pretNou){
+        if(pretNou <= 0){
+            throw "Pretul nu poate fii actualizat"
+        }
+        else{
+            this.mypret = pretNou
+        }
     }
     cumpara(){
             if(this.stoc>0){
@@ -36,6 +49,9 @@ class Carte{
     }
     reducere(procent){
         this.pret -= (procent * this.pret) / 100 
+    }
+    info(){
+        console.log(`Titlul este ${this.titlu}, autor ${this.autor} etc.`);
     }
 }
 
