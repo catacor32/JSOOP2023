@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Vehicle{
+            constructor(type,color,marca,an){
+                this._type = type;
+                this._color = color;
+                this._marca = marca;
+                this._an = an;
+            }
+            info(){
+                return(`Tipul te vehicul este ${this.type}, are culoare ${this.color}, marca ${this.marca} din anul ${this.an}`);
+            }
+            start(){
+                return`am pornit ${this.type}`
+            }
+            stop(){
+                return`am oprit ${this.type}`
+            }
+            pickUpPassagers(){
+                return `Passagerul s-a urcat in ${this.type} si ${this.start()}`;
+            }
+            dropOffPassagers(){
+                return `Passagerul a coborat si ${this.stop()}`;
+            }
+            get type(){
+                console.log("Sunt in getter type")
+                return this._type;
+            }
+            set type(value){
+                this._type = value;
+            }
+            get color(){
+                return this._color;
+            }
+            set type(value){
+                this._color = value;
+            }
+            get marca(){
+                return this._marca;
+            }
+            set type(value){
+                this._marca = value;
+            }
+            get an(){
+                return this._an;
+            }
+            set type(value){
+                this._an = value;
+            }
+        }
+
+        const vehicul1 = new Vehicle("masina","rosu","Ford",2015);
+        const vehicul2 = new Vehicle("motorbike", "albastru","Honda", 2018);
+        console.log(vehicul1.info());
+        console.log(vehicul1.start());
+        console.log(vehicul1.stop());
+        console.log(vehicul1.pickUpPassagers());
+        console.log(vehicul1.dropOffPassagers());
+
+    </script>
+</body>
+</html>
